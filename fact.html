@@ -1,0 +1,26 @@
+<html>
+<head>
+	<script>
+		function fac()
+		{
+			var n,f,i;
+			f=1;
+			n=Number(document.getElementById("num").value);
+			for(i=1;i<=n;i++)
+			{
+				f=f*i;
+			}
+			
+			document.getElementById('fact').innerHTML=f;
+		}
+	</script>
+<body>
+	<center>
+	<h1> Factorial </h1>
+	Enter the number:<input id="num"></br>
+	<button onclick="fac()">Factorial</button></br>
+	<p id="fact"></p>
+	</center>
+</body>
+</head>
+<html>

@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>dropdown</title>
+<script type="text/javascript">
+function country(index) 
+{
+document.ddmenu.sname.options.length=0;
+document.ddmenu.dname.options.length=0;
+document.ddmenu.dname.options[0]=new Option("select District", "");
+switch (index) 
+{
+case "India":
+document.ddmenu.sname.options[0]=new Option("select state", "");
+document.ddmenu.sname.options[1]=new Option("Andhra Pradesh", "Andhra Pradesh");
+document.ddmenu.sname.options[2]=new Option("Telangana", "Telangana");
+break;
+case "USA":
+document.ddmenu.sname.options[0]=new Option("select state", "");
+document.ddmenu.sname.options[1]=new Option("xxxx", "xxxx");
+document.ddmenu.sname.options[2]=new Option("yyyy", "yyyy");
+break;
+
+}
+return true;
+}
+</script>
+
+<script type="text/javascript">
+function state(index) 
+{
+
+document.ddmenu.dname.options.length=0;
+switch (index) 
+{
+case "Andhra Pradesh":
+document.ddmenu.dname.options[0]=new Option("select District", "");
+document.ddmenu.dname.options[1]=new Option("Vizag", "Vizag");
+document.ddmenu.dname.options[2]=new Option("Bhimavaram", "Bhimavaram");
+break;
+case "Telangana":
+document.ddmenu.dname.options[0]=new Option("select District", "");
+document.ddmenu.dname.options[1]=new Option("Hyderabad", "Hyderabad");
+document.ddmenu.dname.options[2]=new Option("Warangal", "Warangal");
+break;
+case "xxxx":
+document.ddmenu.dname.options[0]=new Option("select District", "");
+document.ddmenu.dname.options[1]=new Option("xxxy", "xxxy");
+document.ddmenu.dname.options[2]=new Option("xxyy", "xxyy");
+break;
+case "yyyy":
+document.ddmenu.dname.options[0]=new Option("select District", "");
+document.ddmenu.dname.options[1]=new Option("yyyx", "yyyx");
+document.ddmenu.dname.options[2]=new Option("yyxx", "yyxx");
+break;
+}
+return true;
+}
+</script>
+</head>
+<body>
+		<h1><center>Nested DropDown</center></h1>
+		<center>
+		<form id="ddmenu" name="ddmenu" onsubmit="return validateForm();">
+
+				Country:
+				<select name="cname" id="cname" onchange="javascript: country(this.options[this.selectedIndex].value);">
+				<option value="">Select Country</option>
+				<option value="India">India</option>
+				<option value="USA">Pakistan</option>
+				</select>
+				</br>
+				States:
+				<select name="sname" onchange="javascript: state(this.options[this.selectedIndex].value);">
+				<option value="">select state</option>
+				</select>
+				</br>
+				District:
+				<select name="dname"><option value="">select district</option>
+				</select>
+		</form>
+	</center>
+</body>
+</html>

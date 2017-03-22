@@ -1,0 +1,70 @@
+<html>
+<body>
+<head>
+<script>
+	function sort()
+	{
+		var sortary =new Array(6)
+		var i,t,num7;
+	
+		sortary[0]=Number(document.getElementById("n1").value);
+		sortary[1]=Number(document.getElementById("n2").value);
+		sortary[2]=Number(document.getElementById("n3").value);
+		sortary[3]=Number(document.getElementById("n4").value);
+		sortary[4]=Number(document.getElementById("n5").value);
+		sortary[5]=Number(document.getElementById("n6").value);
+		for(i=0;i<6;i++)
+		{
+			for(j=0;j<6;j++)
+			{
+					if(sortary[i]<sortary[j])
+						{
+							t=sortary[i];
+							sortary[i]=sortary[j];
+							sortary[j]=t;
+						}
+			}
+		}
+	
+		for(i=0;i<6;i++)
+		{
+			document.write(sortary[i]+"<br>");
+		}
+	}
+</script>
+ <h1><center>STUDENT FORM</center></h1>
+
+<table>
+	<tr>
+		<td>Num1:</td>
+		<td><input id="n1"></td></br>
+	</tr>
+	<tr>
+		<td>Num2:</td>
+		<td><input  id="n2"></td></br>
+	</tr>
+	<tr>
+		<td>Num3:</td>
+		<td><input id="n3"></td></br>
+	</tr>
+	<tr>
+		<td>Num4:</td>
+		<td><input  id="n4"></td></br>
+	</tr>
+	<tr>
+		<td>Num5:</td>
+		<td><input  id="n5"></td></br>
+	</tr>
+	<tr>
+		<td>Num6:</td>
+		<td><input  id="n6"></td></br>
+	</tr>
+		
+	<tr>
+		<td><button type="button" onclick="sort()">SUBMIT</button></td>
+	</tr>
+	<p id="sort"></p>
+</table>
+</head>
+</body>
+</html>
