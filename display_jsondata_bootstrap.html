@@ -1,0 +1,110 @@
+<html>
+<head>
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  			<script>
+  					   
+            $(document).ready(function(e){
+                    var t={num:[6,4,3], Name:["prema","pushpa","pavan"] , Gender:["Female","Female","male"] , Phone:[08987653322,08987653322,08987653322], Address:[" Vizag"," Bhimavaram"," rajhamundry"]}
+                    $.each(t.num,function(i,ele)
+                    {
+                            $("#data").append("<tr><td>" +t.num[i] + "</td><td>" + t.Name[i] + "</td><td>"+ t.Gender[i] + "</td><td>"+ t.Phone[i] + "</td><td>" + t.Address[i] + "</td>" + "<td><img src='edit.gif' class='btnEdit' width=15 height=15><img src='delete.png' class='btnDelete' width=15 height=15></td></tr>");
+                    })
+            });
+              $(document).ready(function(){
+                  $("#regi").hide();
+                $("#add").click(function(){
+                        $("#table").hide();
+                        $("#regi").show();
+                });
+            });
+            $(document).ready(function(){
+                $("#submit").click(function(){
+                        $("#regi").hide();
+                        $("#regi").hide();
+                       var n=$("#numb").val();                  
+                       var na=$("#name").val();
+                       var g=$("#gender").val();
+                       var pn=$("#pnumber").val();
+                       var ta=$("#address").val();
+                       $("#data").append("<tr><td>" +n+ "</td><td>" +na+ "</td><td>" +g+ "</td><td>" +pn+ "</td><td>" +ta+ "</td><td><img src='edit.gif' class='btnSave' width=15 height=15><img src='delete.png' class='btnDelete' width=15 height=15></td></tr>");
+                    $("#table").show();
+           			 });
+               });
+            $(document).ready(function(){
+                $(".btnEdit").click(function(){
+                         $("#table").hide();
+                          $("#regi").show();
+                        var n=$(this).closest("tr").find('td:eq(0)').text();
+                        var na=$(this).closest("tr").find('td:eq(1)').text();
+                        var g=$(this).closest("tr").find('td:eq(2)').text();
+                        var pn=$(this).closest("tr").find('td:eq(3)').text();
+                        var ta=$(this).closest("tr").find('td:eq(4)').text();
+                        
+                        $('#numb').val(n);
+                        $('#name').val(na);
+                        $('#gender').val(g);
+                        $('#pnumber').val(pn);
+                        $('#address').val(ta);
+                });
+            });
+            $(document).ready(function(){
+                $(".btnDelete").click(function(){
+                        $(this).closest("tr").remove();    
+                });
+            });
+  			</script>
+</head>
+<body>
+		<div class="container">
+				<div class="table-responsive">
+				    
+				    <button type="button" class="btn btn-primary" id="add" >Add Data</button>
+				    <table class="table" id="table">
+				        <thead>
+				    		<tr>
+				    			<th>#</th>
+				    			<th>Name</th>
+				    			<th>Gender</th>
+				    			<th>PhoneNumber</th>
+				    			<th>Address</th>
+				    			<th>Action</th>
+				    		</tr>
+				    	 </thead>
+				    	 <tbody id="data">
+				    	 	
+				    	 </tbody>
+				    </table>
+				</div>
+		</div>
+		<div class="regi" id="regi">
+			  <form>
+			  			<h2>Registraion Page</h2>
+			  		   <div class="form-group">
+					      <label for="num">Serial Number:</label>
+					      <input type="number" class="form-control" id="numb" placeholder="Enter serial number" required>
+				      </div>
+				      <div class="form-group">
+				      		<label for="name">Name:</label>
+				      		<input type="text" class="form-control" id="name" placeholder="Enter ur name" required>
+				      </div>
+				      <div class="radio">
+				      		<label for="gender">Gender:</label>
+				      		<label><input type="radio"  id="gender" value="Female" required>Female</label></br>
+				      		<label><input type="checkbox" id="gender" value="Male" required>Male</label>
+				      </div>
+				      <div class="form-group">
+				      		<label for="pnumber">PhoneNumber:</label>
+				      		<input type="number" class="form-control" id="pnumber" placeholder="Enter ur phoneNumber" required>
+				      </div>
+				      <div class="form-group">
+				      		<label for="address">Address:</label>
+				      		<textarea class="form-control" rows="3" id="address" required></textarea>
+				      </div>
+				        <button type="submit" class="btn btn-default" id="submit" style="background-color:lightblue">Submit</button>
+			  </form>
+		</div>
+</body>
+</html>
