@@ -1,0 +1,129 @@
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+                var array;
+            $(document).ready(function(e){
+                    var t={num:[6,4,3], Name:["prema","pushpa","pavan"] , Gender:["Female","Female","male"] , Phone:[08987653322,08987653322,08987653322], Address:[" Vizag"," Bhimavaram"," rajhamundry"]}
+                    $.each(t.num,function(i)
+                    {
+                            $("#data").append("<tr><td>" +t.num[i] + "</td><td>" + t.Name[i] + "</td><td>"+ t.Gender[i] + "</td><td>"+ t.Phone[i] + "</td><td>" + t.Address[i] + "</td>" + "<td><img src='edit.gif' class='btnEdit' width=15 height=15><img src='delete.png' class='btnDelete' width=15 height=15></td></tr>");
+                    })
+            });
+              $(document).ready(function(){
+                  $("#form").hide();
+                $("#add").click(function(){
+                        $("#ttable").hide();
+                        $("#form").show();
+                });
+            });
+            $(document).ready(function(){
+                $("#save").click(function(){
+                        $("#form").hide();
+                         $("#form").hide();
+                       var n=$("#num").val();                  
+                       var na=$("#name").val();
+                       var g=$("#gender").val();
+                       var pn=$("#pnumb").val();
+                       var ta=$("#tarea").val();
+                       $("#data").append("<tr><td>" +n+ "</td><td>" +na+ "</td><td>" +g+ "</td><td>" +pn+ "</td><td>" +ta+ "</td><td><img src='edit.gif' class='btnSave' width=15 height=15><img src='delete.png' class='btnDelete' width=15 height=15></td></tr>");
+                    $("#ttable").show();
+            });
+              
+                           
+                });
+            $(document).ready(function(){
+                $(".btnEdit").click(function(){
+                         $("#ttable").hide();
+                          $("#form").show();
+                        var n=$(this).closest("tr").find('td:eq(0)').text();
+                        var na=$(this).closest("tr").find('td:eq(1)').text();
+                        var g=$(this).closest("tr").find('td:eq(2)').text();
+                        var pn=$(this).closest("tr").find('td:eq(3)').text();
+                        var ta=$(this).closest("tr").find('td:eq(4)').text();
+
+                        $('#num').val(n);
+                        $('#name').val(na);
+                         $('#gender').val(g);
+                          $('#pnum').val(pn);
+                           $('#tarea').val(ta);
+                          $("#data").modify("<tr><td>" +n+ "</td><td>" +na+ "</td><td>" +g+ "</td><td>" +pn+ "</td><td>" +ta+ "</td><td><img src='edit.gif' class='btnSave' width=15 height=15><img src='delete.png' class='btnDelete' width=15 height=15></td></tr>");
+                    $("#ttable").show();
+                });
+            });
+           
+            $(document).ready(function(){
+                $(".btnDelete").click(function(){
+                        
+                        $(this).closest("tr").remove();
+                       
+                });
+            });
+            $(document).ready(function(){
+                $("#cancel").click(function(){
+                        $("#form").hide();
+                         $("#ttable").show();
+                });
+            });
+    </script>
+    
+</head>
+<body>
+         <center>
+            <h2>Displaying the JSON data into a table format</h2>
+            </center>
+            <div class="container">
+                            <button type="button" id="add" class="btn btn-primary" ;>Add Data</button>
+                          <table id="ttable" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                        <th>num</th>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>Phone</th>
+                                        <th>Address</th>
+                                        <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data">
+                        </tbody>
+                    </table>
+            </div>
+             <div id="form"  >
+                         <center>
+                        <table border=0>
+                                    <h3>Enter the details</h3>
+                                   <tr> 
+                                        <td>Enter serial Number:</td>
+                                       <td> <input type="number" id="num" name="num"></br></td>
+                                    </tr>
+                                     <tr>
+                                     <td> Enter Name:</td>
+                                    <td><input type="text" id="name" name="name"></br> </td>
+                                   </tr> 
+                                   <tr>
+                                    <td>Gender:</td>
+                                   <td> Male <input type="radio" id="gender" name="gender"></br>
+                                    Female<input type="radio" id="gender" name="gender"></br></td>
+                                   </tr>
+                                   <tr>
+                                    <td> Phonenumber:</td>
+                                   <td><input type="number" id="pnumb" name="pnumb"></br > </td>
+                                   </tr>
+                                   <tr>
+                                  <td>  Address:</td>
+                                   <td> <textarea name="tarea" id="tarea" rows=2 columns=20></textarea></td>
+                                   </tr>
+                                   <tr>
+                                        <td><center><input type="submit" id="save" class="btn btn-info" value="submit"></center></td>
+                                        
+                                   </tr>
+                    </table.
+                  </center>
+            </div>
+</body>
+</html>

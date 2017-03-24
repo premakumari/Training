@@ -1,0 +1,197 @@
+ <html>
+ <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+    
+        
+        <style type="text/css">
+                    #tabs   {
+                                margin: 0;
+                                overflow: hidden;
+                                padding: 0;
+                                position:relative;
+                                top:2px;
+                            }
+
+                            #tabs li {
+                                display: block;
+                                margin: 0;
+                                margin-right: 1px;
+                                float: left;
+                            }
+
+                            #tabs li a {
+                                display: block;
+                                padding: 2px 10px;
+                                border: 2px solid #817bfc;
+                                border-bottom: 0 none;
+                                text-align: center;
+                                text-decoration: none;
+                            }
+
+                            .tab-section {
+                                background:#d4efff;
+                                padding: 10px;
+                                border: 2px solid #817bfc;
+                            }
+
+                            #tabs li a.current {
+                                background: #d4efff;
+                                color: #000;
+                                    border-bottom: 2px solid #d4efff;
+                            }   
+                            #submit
+                            {
+                                margin-left:1430px;
+                            }
+                            #submit1
+                            {
+                                margin-left:1490px;
+                            }
+                            #c1,#c2,#c3,#c4
+                            {
+                                background-color:lightblue;
+                            }
+                            div.accordion {
+                            background-color: #eee;
+                            color: #444;
+                            cursor: pointer;
+                            padding: 18px;
+                            width: 100%;
+                            border: none;
+                            text-align: left;
+                            outline: none;
+                            font-size: 17px;
+                            transition: 0.4s;
+                        }
+
+                        div.accordion.active, div.accordion:hover {
+                            background-color: #ddd;
+                        }
+
+                        div.accordion:after {
+                            content: '\002B';
+                            color: #777;
+                            font-weight: bold;
+                            float: left;
+                            margin-left: 3px;
+                        }
+
+                        div.accordion.active:after {
+                            content: "\2212";
+                        }
+
+                        div.panel {
+                            padding: 0 18px;
+                            background-color: white;
+                            max-height: 0;
+                            overflow: hidden;
+                            transition: max-height 0.2s ease-out;
+                        }
+                        div.tabs
+                        {
+                            background-color:lightblue;
+                        }
+                        #table{
+                              background-color:lightblue;
+                                font-family: arial, sans-serif;
+                                border-collapse: collapse;
+                                width: 100%;
+                            }
+        </style>
+ </head>
+ <body>
+        
+             <h1>Simple Tabs</h1>
+                <ul id="tabs">
+                    <li><a href="#ao">Account Overview</a></li>
+                    <li><a href="#php">Billing Information</a></li>
+                </ul>
+
+                <div id="ao" class="tab-section">
+                    
+                            <div class="accordion"><u>Tme And Employement Management</u>
+                                          <button type="submit" id="submit" style="font-size:9pt;color:white;background-color:green;border:2px solid #336600;padding:3px">Add user Accounts
+                            </div>
+                                         
+                            <div class="panel">
+                                     </br></br>
+                              <table>
+                                   <tr>
+                                          <td>Plan</td> <td> :Time and Employee Manafement system with unlimited</td>
+                                    </tr>
+                                    <tr>
+                                          <td> price       </td>     <td> : <strike>$9.00</strike> $0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subscription Amount</td><td>:$90.00</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td> Discount  </td><td>   : 100%(Unlimited users for beta joiners)</td>
+                                    </tr>
+                                    <tr>   
+                                        <td>Billed Amount </td><td>     : $0.00</td>
+                                    </tr>
+                                </table>
+                                 </br>
+                                 <table id="table">
+                                    <tr >
+                                        <td >Date</td>
+                                        <td >Type</td>
+                                        <td >Details</td>
+                                        <td >Amount</td>
+                                    </tr>
+                                  </table>
+                                  <p>There are no results </p>
+                            </div>
+                            </br>
+                             <div class="accordion"><u>Vendor and Invoice Management</u>
+                                             <button type="submit" id="submit1" style="font-size:9pt;color:white;background-color:green;border:2px solid #336600;padding:3px">Learn More</button>  
+                             </div>
+                                 
+                            <div class="panel">   hello hello hello ahi ai hai     </div>
+                </div>
+                <div id="php" class="tab-section">
+                       <p>Hai every one</p>
+                </div>
+        
+          <script>
+                     $(function(){
+                        
+                        $('#tabs a').bind('click', function(e){
+                            $('#tabs a.current').removeClass('current');
+                            $('.tab-section:visible').hide();
+                            $(this.hash).show();
+                            $(this).addClass('current');
+                            e.preventDefault();
+                        }).filter(':first').click();
+                        
+                   });
+                       
+                    var acc = document.getElementsByClassName("accordion");
+                        var i;
+
+                        for (i = 0; i < acc.length; i++) {
+                          acc[i].onclick = function() {
+                            this.classList.toggle("active");
+                            var panel = this.nextElementSibling;
+                            if (panel.style.maxHeight){
+                              panel.style.maxHeight = null;
+                            } else {
+                              panel.style.maxHeight = panel.scrollHeight + "px";
+                            } 
+                          }
+                        }
+                  
+        </script>    
+ </body>
+ </html>          
+
+
+
+
+
+
+
+           

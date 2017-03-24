@@ -1,0 +1,75 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+    <script>
+      $(document).ready(function(){
+                  $('#register').validate({
+                     rules:{
+                        name:{
+                                  required:true
+                               },	
+                        pswd:{
+                                  required:true,
+                                  minlength:5
+                               },
+                         pnumb:{
+                         			required:true,
+                         			minlength:10,
+                         			maxlength:10
+                         		},
+                         age:{
+                         			required:true
+                         		},
+                         gender:{
+                         			required:true
+                         		},
+                         education:{
+                         			required:true
+                         		},
+                         textarea:{
+                         			required:true
+                         }
+
+                     	},
+                     	messages:{
+                     			name:"Please enter ur name",
+                     			pswd:"please enter ur pswd minimum 5 characters",
+                     			number:"please enter ur correct phone number",
+                     			age:"please enter ur age",
+                     			gender:"Please select ur gender",
+                     			textarea:"please fill ur address",
+                     			education:"please tick ur education ox"
+
+                     	}
+                  });
+      });
+    </script>
+</head>
+<body>
+        <center>
+        <form action="" id="register">
+              <h1>REGISTRATION PAGE</h1>
+              Enter name:
+              <input type="text" id="name" name="name"></br>
+               Password:
+              <input type="password" id="pswd" name="pswd"></br>
+              Phonenumber:
+              <input type="number" id="pnumb" name="pnumb"></br	>	
+              Age:
+              <input type="number" id="age" name="age"></br>
+              Gender:
+              Male<input type="radio" id="gender" name="gender"></br>
+              Female<input type="radio" id="gender" name="gender"></br>
+              Education:
+              10<sup>th</sup> class<input type="checkbox" id="education" name="education" value="10th class"></br>
+              Inter<input type="checkbox" id="education" name="education" value="Inter"></br>
+              Degree<input type="checkbox" id="education" name="education" value="10th class"></br>
+              Address:
+              <textarea  id="textarea" name="textarea" width=20 height=10></textarea></br>
+
+              <button id="submit" type="submit">Submit</button>
+            </center>
+        </form>
+</body>
+</html>
