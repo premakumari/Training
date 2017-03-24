@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<script type="text/javascript">
+		function wordcount()
+		{
+			str=document.getElementById("sen").value;
+			document.write("Number of words is "+str.split(' ').length);
+			document.write("<br>");
+			var strarray;
+			var i,c,j;
+			strarray=str.split(' ');
+			strarray.splice(2,1);
+			console.log(strarray);
+		}
+	</script>
+	</head>
+			
+<body>
+	<center>
+	<h1>Analyze</h1>
+	Enter any sentence:
+	<textarea  id="sen" rows="2" cols="30"></textarea></br>
+	<button type="button" onclick="wordcount()">count</button>
+	</center>
+	</body>
+<html>
+
+
+

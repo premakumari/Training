@@ -1,0 +1,42 @@
+<html>
+<head>
+<script type="text/javascript">
+		function change(index)
+		{
+			switch(index)	
+			{
+				case "India":
+				document.ddmenu.sname.options[0]= new Option("select satate");
+				document.ddmenu.sname.options[1]= new Option("Andhra Pradesh","Andhra Pradesh");
+				document.ddmenu.sname.options[2]= new Option("Delhi","Delhi");
+				 break;
+
+				case "USA":
+				document.ddmenu.sname.options[0]= new Option("select state","");
+				document.ddmenu.sname.options[1]= new Option("xxxxx","xxxxx");
+				document.ddmenu.sname.options[2]= new Option("yyyyyy","yyyyyy");
+				break;
+			}
+			return true;
+		}
+</script>
+</head>
+<body>
+       <h1><center>Nested DropDown</center></h1>
+<center>
+	<form name="ddmenu" id="ddmenu" method="post" onsubmit="return Validateform() true">
+		Country Name:
+		<select name="cname" id="cname" onchange="javascript: change(this.options[this.selectedIndex].value);">
+			<option value="select country">select country</option>
+			<option value="India">India</option>
+			<option value="USA">USA</option>
+		</select></br>
+		State:
+			<select name="sname">
+			<option value="">select state</option>
+			</select></br>
+	</form>
+	</center>
+</body>
+</html>
+
